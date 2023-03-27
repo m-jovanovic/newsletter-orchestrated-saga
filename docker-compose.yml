@@ -1,0 +1,34 @@
+version: '3.4'
+
+services:
+  newsleter-api:
+    image: ${DOCKER_REGISTRY-}webapi
+    container_name: newsletter_api
+    build:
+      context: .
+      dockerfile: WebApi/Dockerfile
+
+  newsletter-db:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: newsletter_db
+    volumes:
+        - ./.containers/database:/var/opt/mssql/data
+    ports:
+        - "1434:1433"
+    environment:
+        ACCEPT_EULA: "Y"
+        SA_PASSWORD: "Strong_password_123!"
+
+  newsletter-mq:
+    image: rabbitmq:3-management
+    container_name: newsletter_mq
+    hostname: newsletter-mq
+    volumes:
+        - ./.containers/queue/data/:/var/lib/rabbitmq
+        - ./.containers/queue/log/:/var/log/rabbitmq
+    ports:
+      - 5672:5672
+      - 15672:15672
+    environment:
+        RABBITMQ_DEFAULT_USER: guest
+        RABBITMQ_DEFAULT_PASS: guest
