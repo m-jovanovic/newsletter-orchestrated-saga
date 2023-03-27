@@ -1,9 +1,9 @@
-﻿using Rebus.Bus;
+﻿using Newsletter.Api.Emails;
+using Newsletter.Api.Messages;
+using Rebus.Bus;
 using Rebus.Handlers;
-using WebApi.Emails;
-using WebApi.Messages;
 
-namespace WebApi.Handlers;
+namespace Newsletter.Api.Handlers;
 
 public class SendFollowUpEmailHandler : IHandleMessages<SendFollowUpEmail>
 {

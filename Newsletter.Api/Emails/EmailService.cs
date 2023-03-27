@@ -1,4 +1,4 @@
-﻿namespace WebApi.Emails;
+﻿namespace Newsletter.Api.Emails;
 
 internal sealed class EmailService : IEmailService
 {

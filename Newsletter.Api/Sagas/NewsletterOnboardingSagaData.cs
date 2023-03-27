@@ -1,6 +1,6 @@
 ﻿using Rebus.Sagas;
 
-namespace WebApi.Sagas;
+namespace Newsletter.Api.Sagas;
 
 public class NewsletterOnboardingSagaData : ISagaData
 {

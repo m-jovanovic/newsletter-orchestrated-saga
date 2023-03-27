@@ -1,9 +1,9 @@
-﻿using Rebus.Bus;
+﻿using Newsletter.Api.Messages;
+using Rebus.Bus;
 using Rebus.Handlers;
 using Rebus.Sagas;
-using WebApi.Messages;
 
-namespace WebApi.Sagas;
+namespace Newsletter.Api.Sagas;
 
 public class NewsletterOnboardingSaga :
     Saga<NewsletterOnboardingSagaData>,

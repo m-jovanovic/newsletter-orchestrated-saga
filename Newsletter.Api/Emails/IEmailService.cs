@@ -1,6 +1,4 @@
-﻿using Rebus.Logging;
-
-namespace WebApi.Emails;
+﻿namespace Newsletter.Api.Emails;
 
 public interface IEmailService
 {

@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
+using Newsletter.Api.Emails;
+using Newsletter.Api.Messages;
 using Rebus.Bus;
 using Rebus.Config;
 using Rebus.Routing.TypeBased;
-using WebApi.Emails;
-using WebApi.Messages;
 
 var builder = WebApplication.CreateBuilder(args);
 
